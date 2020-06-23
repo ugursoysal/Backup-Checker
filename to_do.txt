@@ -1,0 +1,66 @@
+Go to Google Console: https://console.developers.google.com/apis/
+
+On top left, open the projects drop list -> New Project
+
+Project name: Backup Checker (or you can specify however you want)
+
+Click "Create". You'll wait between 30 and 60 seconds. It'll create a notification once the project is created. You can then open the notifications and click the project name to go to your project dashboard.
+
+Menu (top left) -> APIs & Services -> OAuth consent screen
+
+Set User Type to "External". Click "CREATE". Fill the following form however you want. You can pick an Application name and optionally set a logo for the application.
+
+Click Save and go to:
+
+Menu -> APIs & Services (should already be open on the left of the screen) -> Credentials -> + CREATE CREDENTIALS -> OAuth client ID
+
+Application type: Web Application
+Name: Backup Checker (you can set it however you want)
+Authorised redirect URIs: https://developers.google.com/oauthplayground
+
+Hit "Create" button. On the following "OAuth client created" screen, note down the following values:
+
+"Your Client ID"
+"Your Client Secret"
+
+These will be the settings which you're going to enter in the app. Before that, we need to give access permission to the Gmail application.
+
+You can go here to do that: https://developers.google.com/oauthplayground/
+
+On top right there is a Settings button. You'll find the following options selected already. If not, please set them accordingly:
+
+OAuth flow: Server-side
+OAuth endpoints: Google
+Authorization endpoint: https://accounts.google.com/o/oauth2/v2/auth
+Token endpoint: https://oauth2.googleapis.com/token
+Access token location: Authorization header w/ Bearer prefix
+Access type: Offline
+Force prompt: Consent Screen
+
+Now, put a tick on "Use your own OAuth credentials" box.
+
+Enter the "Client ID" and "Client Secret" values which you've saved earlier.
+
+Hit Close.
+
+Go to the left of the screen, where it says: Step 1 - Select & authorize APIs
+
+Find the Gmail API v1 -> Put a tick on https://mail.google.com/ -> Hit Authorize APIs
+
+You'll be asked for permission on which account you want to give access. Select that account and if it says "This application is not approved" or something like that, select Advanced -> Go to <your application name> application (not safe)
+
+It says it's not safe because you've just created it. Since you are the application owner, there is nothing to worry about.
+
+It'll show you which permissions the application is going to have. Allow the permissions and you'll be redirected to the previous OAuth 2.0 Playground page.
+
+You'll see an Authorization code given. You will not need it. You just need the "Refresh token".
+
+Click on "Exchange authorization code for tokens" and wait for the refresh token to be set. Once it's given, save your "Refresh token" like you've saved the "Client ID" and "Client Secret".
+
+Enter the values you've saved to the settings of Backup Checker application. Application will save your settings and won't be asking for them again until you've removed the application from your mobile.
+
+Last thing to do is to enabling Gmail API for your Google Application, go here to do that: https://console.developers.google.com/apis/library/gmail.googleapis.com
+
+Select your project which you've just created on the top-left of the screen and hit "Enable API".
+
+You can now use Backup Checker without entering your e-mail or password. Also, you'll have full privacy since everything is set on your behalf.

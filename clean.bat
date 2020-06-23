@@ -1,0 +1,1 @@
+E:\android\flutter_windows_1.17.3-stable\flutter\bin\flutter.bat clean
